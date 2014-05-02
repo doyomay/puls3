@@ -1,0 +1,18 @@
+body{
+	background: #222;
+}
+header{
+	background: red;
+}
+header h1 {
+	color: blue;
+}
+section{
+	background: white;
+}
+section p {
+	background: yellow;	
+}
+footer{
+	background: #444;
+}
