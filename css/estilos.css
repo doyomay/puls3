@@ -1,11 +1,10 @@
 body{
-	background:#222;
+	background:#333;
 }
 header{
 	background: red;
 }
 header h1 {
-	color: blue;
 }
 section{
 	background: white;
