@@ -1,3 +1,24 @@
+/*(recomendable) Usar "em" en margenes,fuentes y padding*/
+/*por defecto todas las cajas son de tipo block*/
+/*overflow: hiden; - esconde lo que se sale de la caja */
+/*display: block; - hace que tenga nada en su posicion a los costados, las cajas se van hacia abajo*/
+/*display: inline; - img,span,strong aceptan el flujo de texto, inline no tiene ni margin ni padding*/
+/*display: inline-block; */
+
+/******************************************************************************************
+				---position's----
+
+position: static;
+- Es la posicion por defecto.
+- todo el sistema se queda estatico
+position: relative;
+- obtiene top,left, bottom, right (aparte de los margenes)
+
+position: absolute;
+- resetea las margenes y posicion, pone como punto la caja con position: relative ; mas cercano
+y si no encuentra usa el body
+
+********************************************************************************************/
 a
 {
 	color: #22BCE0;
@@ -15,39 +36,40 @@ body
 }
 footer
 {
-	color: rgba(255,255,255,0.7);
+	color: rgba(255,255,255,0.7);/*difumina el texto*/
 	background: #22BCE0;
-	text-align: center;
+	text-align: center; /*centra el texto*/
 	padding: 1em;
 }
-footer p:first-child
+/* Uso de pseudo elementos*/
+footer p:first-child /* Al primer hijo del footer que sea parrafo "p" */
 {
 	margin-bottom: 0;
 }
-footer p:last-child
+footer p:last-child /* Al ultimo hijo del footer que sea parrafo "p" */
 {
 	margin-top: 0;
 }
-footer p:last-child:after
+footer p:last-child:after /* Al ultimo hijo del footer que sea parrafo "p" , pero despues de que comience el texto*/
 {
-	content: " -";
+	content: " -"; /*contenido*/
 }
-footer p:last-child:before
+footer p:last-child:before /* Al ultimo hijo del footer que sea parrafo "p" , pero antes de que comience el texto*/
 {
-	content: "- ";
+	content: "- "; /*contenido*/
 }
 header
 {
 	background: #343B54;
 	color: white;
-	overflow: hidden;
+	overflow: hidden; /* si tienes elementos que salen de la caja se te ocultan(si esta en position: absolute)*/
 	padding: 0.5em;
 	position: relative;
 }
 header figure
 {
 	margin: 0px;
-	float: left;
+	float: left; /*Se quita todo el largo de la caja, haciento que todo se pueda "unir" y "pegar" */
 }
 header h1
 {
@@ -90,7 +112,7 @@ nav
 }
 nav ul
 {
-	list-style: none;
+	list-style: none; /* Cambia el estilo de la lista(lo elimina en este caso) */
 	margin: 0;
 	padding: 0;
 }
@@ -104,15 +126,15 @@ nav ul #publicar_nav a
 {
 	background: #22BCE0;
 	border-radius: 5px;
-	box-shadow: rgba(0,0,0,0.5) 5px 5px 20px;
-	font-style: italic;
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 20px; /* rgba(Red,Green,Bluee,Alfa"difuminacion de 0 - 1"*/
+	font-style: italic; /*Agrega cursiva*/
 	padding: 0.8em 0.5em;
-	text-decoration: none;
+	text-decoration: none; /*quita subrayado de los enlaces*/
 	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
 }
 nav ul li
 {
-	display: inline-block;
+	display: inline-block; 
 	margin: 0 1em 0 0;
 }
 nav ul li a
@@ -130,7 +152,7 @@ nav ul li a
 	background: white;
 	border-bottom: 3px solid #22BCE0;
 	margin-bottom: 3em; 
-	min-height: 128px;
+	min-height: 128px; /*el minimo alto es de 128 pixeles*/
 	position: relative;
 }
 #contenido .item .autor_item
