@@ -46,6 +46,7 @@ header
 }
 header figure
 {
+	margin: 0px;
 	float: left;
 }
 header h1
