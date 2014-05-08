@@ -88,7 +88,8 @@ a:link
 {
 	text-decoration: none;
 }
-aside {
+aside 
+{
 	display: none;
 }
 body
@@ -99,10 +100,10 @@ body
 }
 footer
 {
-	color: rgba(255,255,255,0.7);/*difumina el texto*/
 	background: #22BCE0;
-	text-align: center; /*centra el texto*/
+	color: rgba(255,255,255,0.7);/*difumina el texto*/
 	padding: 1em;
+	text-align: center; /*centra el texto*/
 }
 /* Uso de pseudo elementos*/
 footer p:first-child /* Al primer hijo del footer que sea parrafo "p" */
@@ -252,9 +253,12 @@ nav ul li a:hover {
 	background: #F4502A;
 	border-radius: 0.5em;
 	color: white;
-	float: left;
 	display: inline-block;
+	float: left;
+	margin-left: 1em;
+	margin-bottom: .5em;
 	padding: 0.2em 0.5em;
+	position: static;
 	text-decoration: none;
 }
 #contenido .item .imagen_item
@@ -321,4 +325,26 @@ nav ul li a:hover {
 	{
 		width: 100%;
 	}
+}
+
+/*************************************
+Formulario
+**************************************/
+
+.formulario 
+{
+	padding: 1em;
+	text-align: right;
+	display: none;
+}
+.formulario input 
+{
+	border: 1px solid #ccc;
+	border-radius: 1px;
+}
+.formulario input[type="submit"]{
+	background: #22BCE0;
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 20px; /* rgba(Red,Green,Bluee,Alfa"difuminacion de 0 - 1"*/
+	font-style: italic; /*Agrega cursiva*/
+	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
 }
