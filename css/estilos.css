@@ -240,11 +240,12 @@ nav ul li a:hover {
 #contenido .item .datos_item
 {
 	margin: 1em 1em 0 0;
-	text-align: right;
+	/*text-align: right;*/
 }
 #contenido .item .datos_item .fecha_item
 {
 	color: #AAA;
+	float: right;
 }
 #contenido .item .datos_item .tag_item
 {
