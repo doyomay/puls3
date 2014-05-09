@@ -1,4 +1,3 @@
-console.log("se carga formulario.js")
 var $form = $('#formulario'),
 	$titulo = $('#titulo'),
 	$url = $('#url'),
