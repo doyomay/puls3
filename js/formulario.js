@@ -1,46 +1,49 @@
-var $form = $('#formulario'),
+$(function(){
+	var $form = $('#formulario'),
 	$titulo = $('#titulo'),
 	$url = $('#url'),
 	$button = $('#mostrar-form'),
 	$list = $('#contenido'),
 	$post = $('.item').first();
 
-if (localStorage.getItem('autosave')) {
-	$titulo.val(sessionStorage.getItem("titulo"));
-	$url.val(sessionStorage.getItem("url"));
-};
+	if (localStorage.getItem('autosave')) {
+		$titulo.val(sessionStorage.getItem("titulo"));
+		$url.val(sessionStorage.getItem("url"));
+	};
 
-var id = setInterval(function(){
-	sessionStorage.setItem('titulo',$titulo.val());
-	sessionStorage.setItem('url',$url.val());
-},1000);
-function mostrarFormulario(){
-	$form.slideToggle();
-	$list.slideToggle();
-	return false;
-}
+	var id = setInterval(function(){
+		sessionStorage.setItem('titulo',$titulo.val());
+		sessionStorage.setItem('url',$url.val());
+	},1000);
 
-function agregarPost(){
-	var url = $url.val(),
-		titulo = $titulo.val(),
-		$clone = $post.clone();
+	function mostrarFormulario(){
+		$form.slideToggle();
+		$list.slideToggle();
+		return false;
+	}
 
-	$clone.find('.titulo_item a')
-		.text(titulo)
-		.attr('href', url);
+	function agregarPost(){
+		var url = $url.val(),
+			titulo = $titulo.val(),
+			$clone = $post.clone();
 
-	$clone.hide();
+		$clone.find('.titulo_item a')
+			.text(titulo)
+			.attr('href', url);
 
-	$list.prepend($clone);
-	mostrarFormulario();
-	$titulo.val("");
-	$url.val("");
+		$clone.hide();
 
-	$clone.fadeIn();
+		$list.prepend($clone);
+		mostrarFormulario();
+		$titulo.val("");
+		$url.val("");
 
-	return false;
-}
+		$clone.fadeIn();
 
-// Eventos
-$button.click( mostrarFormulario );
-$form.on('submit', agregarPost );
+		return false;
+	}
+
+	// Eventos
+	$button.click( mostrarFormulario );
+	$form.on('submit', agregarPost );
+});
