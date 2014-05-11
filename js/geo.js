@@ -10,7 +10,9 @@ $(function() {
 		var lon  = posicion.coords.longitude;
 		var mapa = new Image();
 		mapa.src="http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=300x300&markers=color:blue&sensor=true&center="+lat+","+lon;
-		$("#geo").append(mapa);	
+		$("#geo").append(mapa);
+		
+		obtenerGeoInformacion(lat,lon);
 	}
 	geo.getCurrentPosition(geo_exito,geo_error, opciones);		
 });
