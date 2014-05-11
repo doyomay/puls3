@@ -8,8 +8,7 @@ aqui jquery se encarga de adivinar el contenido que mandamos por ajax
 */
 
 $(function(){
-	$.get('usuario.json',
-		function(info){
-			console.log(info)
-		});
+	$.get('usuario.json',function(info){
+		console.log(info)
+	});
 });
